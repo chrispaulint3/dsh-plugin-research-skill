@@ -25,3 +25,14 @@ python3 scripts/lab.py eval skill --labels fixtures/skills.labels.jsonl --predic
 python3 scripts/lab.py history --db .local/experiments.sqlite3
 ```
 比较两个 run ID 用 `python3 scripts/lab.py compare BASELINE_ID CANDIDATE_ID --db .local/experiments.sqlite3`。
+
+
+## 经验学习实验
+B0：真实原生 DSH 执行，不得合成。B1：纯内容路由；B2：内容门槛后依据过去的 verified/direct 任务结果有界重排。以 as_of 截断时间、Release Digest 隔离能力版本，保留未被选择的候选全集。真实成功率必须单独做 E2E 测试。
+
+```bash
+python3 scripts/experience_lab.py audit --events fixtures/adaptive/events.jsonl
+python3 scripts/experience_lab.py evaluate --events fixtures/adaptive/events.jsonl --queries fixtures/adaptive/queries.jsonl --k 1 --db .local/adaptive-eval.sqlite3
+```
+
+其研究 SQLite 表 adaptive_eval_runs 与原 experiment_runs 独立。不把合成数据结果当生产收益，消融实验须固定数据集及算法版本。

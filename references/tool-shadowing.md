@@ -23,3 +23,7 @@
 
 ## 验收证据
 实际运行命令、插件 commit、DSH 版本、工具解析结果、上下文 Token 变化、成功/拒绝的 Skill 调用案例。
+
+
+## 模式门槛
+off 无副作用；observe 只旁路采集；recommend 只能影子计算候选而不得更改工具与目录；enforce 才能在隔离的 Agent/Profile 遮蔽原始 skill 或限制工具。policy_guard.py 只检查建议配置，不是 DSH 原生鉴权。

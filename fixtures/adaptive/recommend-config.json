@@ -1,0 +1,1 @@
+{"mode":"recommend","skill":{"catalogShadow":false,"topK":5},"tool":{"routingEnabled":false},"learning":{"enabled":true,"minEvidence":5,"maxHistoryWeight":0.15}}

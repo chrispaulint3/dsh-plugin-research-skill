@@ -21,3 +21,9 @@ L3：真实 DSH 和新 Session 的集成验证，尤其 Tool Shadowing。
 
 ## 可交付
 源码变更、最小复现、基线与候选评测、回滚步骤。
+
+
+## v3.0 阶段映射
+P0：核对真实 SDK API 与四种模式副作用；P1：observe 采集、事件去重、SQLite；P2：recommend 下的 Skill/Tool 影子候选；P3：verified/direct 的历史排序；P4：显式 Fast/Deep、独立 Subagent 与 Task Brief；P5：B0/B1/B2、时间切分、消融与真实 E2E。
+
+Skill 本身不承担插件 Runtime 代码；修改算法、真实数据采集、权限和持久状态只能放在被测插件仓库。每次测试记录实际结果与回滚方式。

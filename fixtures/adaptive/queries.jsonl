@@ -1,0 +1,2 @@
+{"id":"before","as_of":"2026-11-01T00:00:00Z","intent":"editable_report","candidates":[{"key":"tool:pdf","release_digest":"v2","relevance":0.8},{"key":"tool:export","release_digest":"v2","relevance":0.75}],"relevant":["tool:export"],"forbidden":[]}
+{"id":"after","as_of":"2026-11-17T00:00:00Z","intent":"editable_report","candidates":[{"key":"tool:pdf","release_digest":"v2","relevance":0.8},{"key":"tool:export","release_digest":"v2","relevance":0.75},{"key":"tool:delete","release_digest":"v2","relevance":0.1}],"relevant":["tool:export"],"forbidden":["tool:delete"]}

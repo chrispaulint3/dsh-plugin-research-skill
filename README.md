@@ -28,6 +28,19 @@ ls -la .agents/skills/dsh-plugin-research
 
 > 使用 dsh-plugin-research 检查我的 DSH 开发环境，确认版本与 Profile，验证 Tool Shadowing，然后开发、测试并对比算法效果；不要改动日常使用的 Profile。
 
+## v1.1：适配 DSH Adaptive Execution v3.0
+
+新增运行时观测、Tool 路由、反馈归因、经验学习规范及两个研究脚本。
+
+```bash
+S=.agents/skills/dsh-plugin-research
+python3 "$S/scripts/policy_guard.py" --config "$S/fixtures/adaptive/recommend-config.json"
+python3 "$S/scripts/experience_lab.py" audit --events "$S/fixtures/adaptive/events.jsonl"
+python3 "$S/scripts/experience_lab.py" evaluate --events "$S/fixtures/adaptive/events.jsonl" --queries "$S/fixtures/adaptive/queries.jsonl" --k 1 --db .local/adaptive-eval.sqlite3
+```
+
+离线合成 Fixture 并不代表 DSH 实际调用；B0 原生运行必须单独观测。依旧只支持项目级安装，不加 -g。
+
 ## 能力
 
 - Environment Doctor：只读检查 DSH、Node、pnpm、项目与 Profile

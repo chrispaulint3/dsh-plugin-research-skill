@@ -1,0 +1,10 @@
+{"event_id":"tool-1","event_type":"tools/result","occurred_at":"2026-11-01T00:00:00Z","call_key":"c1","outcome":"ok"}
+{"event_id":"tool-2","event_type":"session/tool-result","occurred_at":"2026-11-01T00:00:01Z","call_key":"c1","outcome":"ok"}
+{"event_id":"feedback-1","event_type":"feedback/message-put","occurred_at":"2026-11-01T00:00:02Z","session_id":"s1","message_id":"m1","revision":1,"rating":"positive"}
+{"event_id":"feedback-2","event_type":"feedback/message-delete","occurred_at":"2026-11-02T00:00:02Z","session_id":"s1","message_id":"m1","revision":2}
+{"event_id":"v-1","event_type":"task/evaluated","occurred_at":"2026-11-02T00:00:00Z","task_id":"t1","intent":"editable_report","capability_key":"tool:export","release_digest":"v2","task_outcome":"success","evidence_scope":"verified","attribution":"direct"}
+{"event_id":"v-2","event_type":"task/evaluated","occurred_at":"2026-11-03T00:00:00Z","task_id":"t2","intent":"editable_report","capability_key":"tool:export","release_digest":"v2","task_outcome":"success","evidence_scope":"verified","attribution":"direct"}
+{"event_id":"v-3","event_type":"task/evaluated","occurred_at":"2026-11-04T00:00:00Z","task_id":"t3","intent":"editable_report","capability_key":"tool:export","release_digest":"v2","task_outcome":"success","evidence_scope":"verified","attribution":"direct"}
+{"event_id":"v-4","event_type":"task/evaluated","occurred_at":"2026-11-05T00:00:00Z","task_id":"t4","intent":"editable_report","capability_key":"tool:export","release_digest":"v2","task_outcome":"success","evidence_scope":"verified","attribution":"direct"}
+{"event_id":"v-5","event_type":"task/evaluated","occurred_at":"2026-11-06T00:00:00Z","task_id":"t5","intent":"editable_report","capability_key":"tool:export","release_digest":"v2","task_outcome":"success","evidence_scope":"verified","attribution":"direct"}
+{"event_id":"future-6","event_type":"task/evaluated","occurred_at":"2026-12-06T00:00:00Z","task_id":"t6","intent":"editable_report","capability_key":"tool:export","release_digest":"v2","task_outcome":"failed","evidence_scope":"verified","attribution":"direct"}

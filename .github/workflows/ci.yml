@@ -12,5 +12,10 @@ jobs:
           python-version: '3.11'
       - name: Unit tests
         run: python -m unittest discover -s tests -v
+      - name: Adaptive offline smoke
+        run: |
+          python scripts/experience_lab.py audit --events fixtures/adaptive/events.jsonl
+          python scripts/experience_lab.py evaluate --events fixtures/adaptive/events.jsonl --queries fixtures/adaptive/queries.jsonl --k 1
+          python scripts/policy_guard.py --config fixtures/adaptive/recommend-config.json
       - name: SQLite / scoring self-check
         run: python scripts/lab.py self-test

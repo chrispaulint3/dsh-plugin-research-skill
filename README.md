@@ -51,4 +51,6 @@ python3 scripts/lab.py self-test
 
 这是 Skill 仓库，不是 DSH 插件。需要从安装目标项目运行，并启用 DSH 文件系统 Skill Provider。正式以 GitHub 作为唯一分发源，不以 ZIP 发布。
 
+当前版本首先通过 GitHub 源码提交发布；在实际 DSH 环境中仍需验证 Tool Shadowing 与真实 Agent E2E。
+
 参考：[skills CLI](https://github.com/vercel-labs/skills) · [DSH](https://github.com/deepseek-ai/deepseek-harness)

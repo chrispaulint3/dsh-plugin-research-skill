@@ -1,0 +1,5 @@
+{"id":"c001","required_refs":["goal","constraints","repo"]}
+{"id":"c002","required_refs":["scope","deadline"]}
+{"id":"c003","required_refs":["read_only","evidence"]}
+{"id":"c004","required_refs":["user_choice"]}
+{"id":"c005","required_refs":["deliverable","approval"]}

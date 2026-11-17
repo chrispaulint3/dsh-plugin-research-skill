@@ -1,0 +1,8 @@
+{"id":"t001","query":"查询任务状态","expected_mode":"direct"}
+{"id":"t002","query":"概述这个函数的用途","expected_mode":"fast"}
+{"id":"t003","query":"修改配置并运行测试","expected_mode":"interactive"}
+{"id":"t004","query":"调研十个竞品形成报告","expected_mode":"background"}
+{"id":"t005","query":"给我列出这个文件的字段","expected_mode":"fast"}
+{"id":"t006","query":"自动修复Bug然后等CI","expected_mode":"background"}
+{"id":"t007","query":"运行一次只读SQL查询","expected_mode":"direct"}
+{"id":"t008","query":"先给结论再持续研究","expected_mode":"background"}

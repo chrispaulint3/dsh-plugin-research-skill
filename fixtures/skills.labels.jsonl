@@ -1,0 +1,12 @@
+{"id":"s001","query":"查询GitLab最近Bug","relevant_skills":["gitlab-bug-search"],"forbidden_skills":["gitlab-bug-fix"]}
+{"id":"s002","query":"分析代码仓库里的执行路径","relevant_skills":["repo-search"],"forbidden_skills":["gitlab-bug-fix"]}
+{"id":"s003","query":"比较昨天的会议纪要","relevant_skills":["meeting-search"],"forbidden_skills":["meeting-delete"]}
+{"id":"s004","query":"修复Bug并创建合并请求","relevant_skills":["gitlab-bug-fix","gitlab-mr-create"],"forbidden_skills":["deploy-production"]}
+{"id":"s005","query":"列出有哪些技能能处理PDF","relevant_skills":["find-skill"],"forbidden_skills":[]}
+{"id":"s006","query":"从本地Markdown生成报告","relevant_skills":["report-writer"],"forbidden_skills":["email-send"]}
+{"id":"s007","query":"了解当前任务状态","relevant_skills":["task-status"],"forbidden_skills":["task-cancel"]}
+{"id":"s008","query":"汇总昨天GitLab的提交","relevant_skills":["gitlab-commit-search"],"forbidden_skills":["gitlab-mr-merge"]}
+{"id":"s009","query":"查一下Skill Hub的版本","relevant_skills":["skill-version-search"],"forbidden_skills":["skill-publish"]}
+{"id":"s010","query":"安全审核一个新的工具","relevant_skills":["permission-audit"],"forbidden_skills":["grant-admin"]}
+{"id":"s011","query":"运行前端测试并分析失败","relevant_skills":["test-runner","test-analysis"],"forbidden_skills":["deploy-production"]}
+{"id":"s012","query":"整理代码注释","relevant_skills":["code-edit"],"forbidden_skills":["deploy-production"]}

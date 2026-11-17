@@ -2,28 +2,27 @@
 
 用于 DSH/Cordis 插件本地开发、Skill 路由、任务分流与上下文隔离实验的独立 Skill 项目。
 
-## 一句话安装
+## 一句话安装（仅项目级）
 
-**DSH 全局使用（推荐：同一台机器的 CLI / Web Profile）**：
-
-```bash
-npx skills add chrispaulint3/dsh-plugin-research-skill --skill dsh-plugin-research -a codex -g -y
-```
-
-这里使用 `-a codex` 是为了让安装器把 Skill 放在共享目录 `~/.agents/skills/`，**并非要求用 Codex 运行**。DSH 文件系统 Skill Provider 默认扫描该目录。安装后先验证：
+在 **DSH 当前使用的 Git 项目根目录** 执行；不要传 `-g`：
 
 ```bash
-test -f ~/.agents/skills/dsh-plugin-research/SKILL.md && echo "Skill file exists"
-```
-
-**仅当前 DSH 工作项目使用**（请从 DSH Agent 实际使用的 Git 项目根目录执行）：
-
-```bash
+cd /path/to/dsh-adaptive-execution
 npx skills add chrispaulint3/dsh-plugin-research-skill --skill dsh-plugin-research -a universal -y
 test -f .agents/skills/dsh-plugin-research/SKILL.md && echo "Project skill exists"
 ```
 
-注意：`-a universal -g` 的全局位置通常是 `~/.config/agents/skills/`，而 DSH 默认扫描 `~/.agents/skills/`、`~/.dsh/skills/` 以及项目的 `.agents/skills/`；位置不一致时即使 CLI 提示安装成功，DSH 也可能找不到。若 DSH 在容器、沙箱或远程主机上运行，还需要确保其文件系统能访问安装路径。
+这会将 Skill 安装到当前项目 `.agents/skills/dsh-plugin-research/`，不污染全局目录。DSH `dsh-skill-filesystem` 默认发现 `<projectRoot>/.agents/skills/<name>/SKILL.md`。这里的 `projectRoot` 是 Agent 运行目录往上最近的 `.git` 目录；**不能仅从另一个项目启动 DSH，然后假设它会自动读取此项目的 Skill**。如果 DSH 的 Session 工作目录与安装目录不同，需要让 Agent 使用正确的工作项目，或者在隔离 Profile 中为文件系统 Provider 配置 `customSkillDirs` 指向该项目的 `.agents/skills` 绝对路径。
+
+```bash
+# 在安装项目内检查
+pwd
+git rev-parse --show-toplevel
+npx skills list
+ls -la .agents/skills/dsh-plugin-research
+```
+
+若 DSH 在容器/沙箱/远程主机运行，路径还必须对 DSH 文件系统可见。请在**新 Session** 检查 Skill Catalog；还要确保启用 Registry、Filesystem Provider 和 Consumer。
 
 给 Coding Agent 的指令：
 
@@ -40,8 +39,7 @@ test -f .agents/skills/dsh-plugin-research/SKILL.md && echo "Project skill exist
 ## 安装后的命令
 
 ```bash
-S="$HOME/.agents/skills/dsh-plugin-research"
-[ -f .agents/skills/dsh-plugin-research/SKILL.md ] && S=.agents/skills/dsh-plugin-research
+S=.agents/skills/dsh-plugin-research
 python3 "$S/scripts/doctor.py" --project . --profile adaptive-dev
 python3 "$S/scripts/lab.py" self-test
 python3 "$S/scripts/scaffold.py" --project .   # 只预览，不修改
